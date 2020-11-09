@@ -10,6 +10,61 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            var vehicles = new List<Vehicle>();
+
+            var ducatti = new Motorcycle();
+            ducatti.Model = "x11";
+            ducatti.Year = "2020";
+            ducatti.Make = "Duactti";
+            ducatti.TopSpeed = "201mph";
+            ducatti.HasSidecar = false;
+
+            var gWagon = new Car()
+            {
+                Year = "2019",
+                Model = "G100",
+                Make = "Mercedes",
+                NumberOfDoors = 4,
+                TopSpeed = "145mph"
+
+            };
+
+            Vehicle Indian = new Motorcycle()
+            {
+                Year = "1980",
+                Model = "LightFeather",
+                Make = "Indian",
+                TopSpeed = "92mph",
+                HasSidecar = false
+
+            };
+
+            Vehicle Outback = new Car()
+            {
+                NumberOfDoors = 4,
+                Model = "Outback",
+                Make = "Subaru",
+                Year = "2018",
+                TopSpeed = "113mph"
+
+            };
+
+
+            vehicles.Add(ducatti);
+            vehicles.Add(gWagon);
+            vehicles.Add(Indian);
+            vehicles.Add(Outback);
+
+            foreach(Vehicle v in vehicles)
+            {
+                Console.WriteLine($"The {v.Year} {v.Make} {v.Model}");
+            }
+
+            Indian.DriveAbstract();
+            Indian.DriveVirtual();
+            Outback.DriveAbstract();
+            Outback.DriveVirtual();
+
             /*
              * Todo follow all comments!! 
              */
